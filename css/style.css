@@ -7,6 +7,12 @@
 body{
     background-color: #306057;
 }
+
+main{
+
+    font-family: 'Montserrat', sans-serif;
+
+}
 /* Assets */
 
 
@@ -56,7 +62,7 @@ body{
 
     font-weight: bold;
     font-size: 1.1em;
-    font-family: 'Montserrat', sans-serif;;
+    font-family: 'Montserrat', sans-serif;
 
     cursor: pointer;
 
@@ -71,6 +77,42 @@ body{
 /* Main */
 
 .game-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     height: calc(100vh - 80px);
+}
+
+#grid{
+    display: none;
+
+    flex-flow: row wrap;
+
+    width: 500px;
+    height: 500px;
+
+    background-color: white;
+
+    box-shadow: 10px 10px 30px black; 
+}
+
+.square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: calc(100% / 10);
+
+    font-weight: bold;
+
+    border: 1px solid black;
+
+    cursor: pointer;
+}
+
+.active{
+    background-color: #00a8e8;
+
+    color: white;
 }
