@@ -40,7 +40,9 @@ playBtnEl.addEventListener("click", function() {
 
             // al click della cella deve essere alternativamente aggiunta e tolta la classe active
             squareEl.classList.toggle("active");
-
+            
+            // Mostro in console il numero della cella cliccata
+            console.log(`Hai cliccato la cella n. ${i}`);
         });
 
     };
