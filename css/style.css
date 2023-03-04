@@ -3,3 +3,74 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    background-color: #306057;
+}
+/* Assets */
+
+
+/* Navbar */
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+
+    height: 80px;
+
+    background-color: white;
+
+    box-shadow: 0px 5px 30px black;
+}
+
+.img-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    height: 80px;
+}
+
+.img-container img{
+    height: 100%;
+}
+
+.title{
+    font-size: 2.4em;
+    font-family: 'Rubik Iso', cursive;;
+}
+
+#play-btn{
+    padding: 12px 60px;
+
+    border-radius: 30px;
+    border-style: none;
+
+    background-color: #306057;
+
+    color: white;
+
+    font-weight: bold;
+    font-size: 1.1em;
+    font-family: 'Montserrat', sans-serif;;
+
+    cursor: pointer;
+
+    box-shadow: 5px 5px 15px black;
+}
+
+
+/* /Navbar */
+
+
+
+/* Main */
+
+.game-container{
+
+    height: calc(100vh - 80px);
+}
