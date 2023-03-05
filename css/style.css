@@ -47,7 +47,38 @@ main{
 
 .title{
     font-size: 2.4em;
-    font-family: 'Rubik Iso', cursive;;
+    font-family: 'Rubik Iso', cursive;
+}
+
+.select-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.label-title{
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+#difficulty-select{
+    padding: 6px 15px;
+    background-color: #306057;
+
+    color: white;
+
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+
+    border-radius: 20px;
+    border-style: none;
+
+    box-shadow: 5px 5px 15px black;
+
+    cursor: pointer;
 }
 
 #play-btn{
@@ -57,6 +88,29 @@ main{
     border-style: none;
 
     background-color: #306057;
+
+    color: white;
+
+    font-weight: bold;
+    font-size: 1.1em;
+    font-family: 'Montserrat', sans-serif;
+
+    cursor: pointer;
+
+    box-shadow: 5px 5px 15px black;
+}
+
+#recharge{
+    display: none;  
+}
+
+#recharge-btn{
+    padding: 12px 40px;
+
+    border-radius: 30px;
+    border-style: none;
+
+    background-color: #00a8e8;
 
     color: white;
 
@@ -102,7 +156,7 @@ main{
     justify-content: center;
     align-items: center;
 
-    width: calc(100% / 10);
+    
 
     font-weight: bold;
 
@@ -116,3 +170,5 @@ main{
 
     color: white;
 }
+
+/* /Main */
