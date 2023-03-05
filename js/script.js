@@ -9,28 +9,31 @@ la cella cliccata si colora di azzurro ed emetto
 un messaggio in console con il numero della cella cliccata.
 */
 
-// Creo variabile per utilizzare il button
+// Creo variabili per utilizzare i buttons
 const playBtnEl = document.getElementById("play-btn");
-const rechargeBtnEl = document.getElementById("recharge-btn");
+const refreshBtnEl = document.getElementById("refresh-btn");
 
-const rechargeEl = document.getElementById("recharge");
+const refreshEl = document.getElementById("refresh");
 
 // Creo una variabile per bersagliare il container dove creeremo la griglia
 const gridEl = document.getElementById("grid");
 
+// Creo variabile per bersagliare il selettore per la difficoltà
 const difficultyEl = document.getElementById("difficulty-select");
 
 
 // Creo un evento al click del button
 playBtnEl.addEventListener("click", function() {
 
+    // al click il play button sparisce
     playBtnEl.style.display = "none";
-
-    rechargeEl.style.display = "block";
+    // e compare il button per ricaricare la pagina e giocare di nuovo
+    refreshEl.style.display = "block";
 
     // al click il display della griglia passa da none a flex
     gridEl.style.display = "flex";
 
+    // Creo variabile per usare il valore della difficoltà selezionato
     let difficulty = difficultyEl.value;
 
     if (difficulty == 1) {
@@ -59,7 +62,7 @@ playBtnEl.addEventListener("click", function() {
             console.log(`Hai cliccato la cella n. ${i}`);
             });
     
-            rechargeBtnEl.addEventListener("click", function(){
+            refreshBtnEl.addEventListener("click", function(){
             window.location.reload();
             });
         };
@@ -89,7 +92,7 @@ playBtnEl.addEventListener("click", function() {
            console.log(`Hai cliccato la cella n. ${i}`);
            } );
 
-           rechargeBtnEl.addEventListener("click", function(){
+           refreshBtnEl.addEventListener("click", function(){
            window.location.reload();
            });
         };
@@ -119,7 +122,7 @@ playBtnEl.addEventListener("click", function() {
            console.log(`Hai cliccato la cella n. ${i}`);
            });
     
-           rechargeBtnEl.addEventListener("click", function(){
+           refreshBtnEl.addEventListener("click", function(){
            window.location.reload();
            });
         };

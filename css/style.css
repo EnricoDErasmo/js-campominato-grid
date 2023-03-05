@@ -103,11 +103,11 @@ main{
     box-shadow: 5px 5px 15px black;
 }
 
-#recharge{
+#refresh{
     display: none;  
 }
 
-#recharge-btn{
+#refresh-btn{
     padding: 12px 40px;
 
     border-radius: 30px;
