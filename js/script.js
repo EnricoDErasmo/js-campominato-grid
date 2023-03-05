@@ -18,167 +18,113 @@ const rechargeEl = document.getElementById("recharge");
 // Creo una variabile per bersagliare il container dove creeremo la griglia
 const gridEl = document.getElementById("grid");
 
-const hardEl = document.getElementById("hard");
-const mediumEl = document.getElementById("medium");
-const easyEl = document.getElementById("easy");
+const difficultyEl = document.getElementById("difficulty-select");
 
-hardEl.addEventListener("click", function(){
 
-    hardEl.className = "selected";
+// Creo un evento al click del button
+playBtnEl.addEventListener("click", function() {
 
-    if(hardEl.className = "selected") {
+    playBtnEl.style.display = "none";
 
-        // Creo un evento al click del button
-        playBtnEl.addEventListener("click", function() {
+    rechargeEl.style.display = "block";
 
-            playBtnEl.style.display = "none";
+    // al click il display della griglia passa da none a flex
+    gridEl.style.display = "flex";
 
-            rechargeEl.style.display = "block";
-        
-            // al click il display della griglia passa da none a flex
-            gridEl.style.display = "flex";
+    let difficulty = difficultyEl.value;
+
+    if (difficulty == 1) {
+
+        // Creo un ciclo che genera le celle all'interno della griglia
+        for (let i = 1; i <= 100; i++) {
             
-            // Creo un ciclo che genera le celle all'interno della griglia
-            for (let i = 1; i <= 100; i++) {
-                
-                // Creo variabile per creare nuovo elemento in pagina
-                let squareEl = document.createElement("div");
-                // gli asseglo una classe
-                squareEl.className = "square";
-                // faccio in modo che ci siano 10 celle per ogni riga
-                squareEl.style.width = "calc(100% / 10)";
-                // faccio comparire un numero crescente da 1 a 100 al suo interno usando i
-                squareEl.innerHTML = Math.floor(Math.random() * 100) + 1;
-                // dico che l'elemento deve essere aggiunto all'interno della griglia
-                gridEl.append(squareEl);
+            // Creo variabile per creare nuovo elemento in pagina
+            let squareEl = document.createElement("div");
+            // gli asseglo una classe
+            squareEl.className = "square";
+            // faccio in modo che ci siano 10 celle per ogni riga
+            squareEl.style.width = "calc(100% / 10)";
+            // faccio comparire un numero crescente da 1 a 100 al suo interno usando i
+            squareEl.innerHTML = i;
+            // dico che l'elemento deve essere aggiunto all'interno della griglia
+            gridEl.append(squareEl);
         
-        
-                // creo un evento al click della cella
-                squareEl.addEventListener("click", function(){
-        
-                    // al click della cella deve essere alternativamente aggiunta e tolta la classe active
-                    squareEl.classList.toggle("active");
-                    
-                    // Mostro in console il numero della cella cliccata
-                    console.log(`Hai cliccato la cella n. ${i}`);
-                });
-
-                rechargeBtnEl.addEventListener("click", function(){
-                    window.location.reload();
-                });
-        
-            };
-        
-        });
-  
-    }
-
-});
-
-mediumEl.addEventListener("click", function(){
-
-    mediumEl.className = "selected";
-
-    if(mediumEl.className = "selected") {
-
-        // Creo un evento al click del button
-        playBtnEl.addEventListener("click", function() {
-
-            playBtnEl.style.display = "none";
-
-            rechargeEl.style.display = "block";
-        
-            // al click il display della griglia passa da none a flex
-            gridEl.style.display = "flex";
+            // creo un evento al click della cella
+            squareEl.addEventListener("click", function(){
+    
+            // al click della cella deve essere alternativamente aggiunta e tolta la classe active
+            squareEl.classList.toggle("active");
             
-            // Creo un ciclo che genera le celle all'interno della griglia
-            for (let i = 1; i <= 81; i++) {
-                
-                // Creo variabile per creare nuovo elemento in pagina
-                let squareEl = document.createElement("div");
-                // gli asseglo una classe
-                squareEl.className = "square";
-                // faccio in modo che ci siano 10 celle per ogni riga
-                squareEl.style.width = "calc(100% / 9)";
-                // faccio comparire un numero crescente da 1 a 100 al suo interno usando i
-                squareEl.innerHTML = Math.floor(Math.random() * 81) + 1;
-                // dico che l'elemento deve essere aggiunto all'interno della griglia
-                gridEl.append(squareEl);
+            // Mostro in console il numero della cella cliccata
+            console.log(`Hai cliccato la cella n. ${i}`);
+            });
+    
+            rechargeBtnEl.addEventListener("click", function(){
+            window.location.reload();
+            });
+        };
         
-        
-                // creo un evento al click della cella
-                squareEl.addEventListener("click", function(){
-        
-                    // al click della cella deve essere alternativamente aggiunta e tolta la classe active
-                    squareEl.classList.toggle("active");
-                    
-                    // Mostro in console il numero della cella cliccata
-                    console.log(`Hai cliccato la cella n. ${i}`);
-                });
+    } else if (difficulty == 2) {
 
-                rechargeBtnEl.addEventListener("click", function(){
-                    window.location.reload();
-                });
+        // Creo un ciclo che genera le celle all'interno della griglia
+        for (let i = 1; i <= 81; i++) {
+            // Creo variabile per creare nuovo elemento in pagina
+            let squareEl = document.createElement("div");
+            // gli asseglo una classe
+            squareEl.className = "square";
+            // faccio in modo che ci siano 10 celle per ogni riga
+            squareEl.style.width = "calc(100% / 9)";
+            // faccio comparire un numero crescente da 1 a 100 al suo interno usando i
+            squareEl.innerHTML = i;
+            // dico che l'elemento deve essere aggiunto all'interno della griglia
+            gridEl.append(squareEl);
         
-            };
-        
-        });
-  
-    }
+            // creo un evento al click della cella
+           squareEl.addEventListener("click", function(){
 
+           // al click della cella deve essere alternativamente aggiunta e tolta la classe active
+           squareEl.classList.toggle("active");
+        
+           // Mostro in console il numero della cella cliccata
+           console.log(`Hai cliccato la cella n. ${i}`);
+           } );
+
+           rechargeBtnEl.addEventListener("click", function(){
+           window.location.reload();
+           });
+        };
+           
+    } else if (difficulty == 3) {
+
+        // Creo un ciclo che genera le celle all'interno della griglia
+        for (let i = 1; i <= 49; i++) {
+            // Creo variabile per creare nuovo elemento in pagina
+            let squareEl = document.createElement("div");
+            // gli asseglo una classe
+            squareEl.className = "square";
+            // faccio in modo che ci siano 10 celle per ogni riga
+            squareEl.style.width = "calc(100% / 7)";
+            // faccio comparire un numero crescente da 1 a 100 al suo interno usando i
+            squareEl.innerHTML = i;
+            // dico che l'elemento deve essere aggiunto all'interno della griglia
+            gridEl.append(squareEl);
+       
+            // creo un evento al click della cella
+           squareEl.addEventListener("click", function(){
+    
+           // al click della cella deve essere alternativamente aggiunta e tolta la classe active
+           squareEl.classList.toggle("active");
+        
+           // Mostro in console il numero della cella cliccata
+           console.log(`Hai cliccato la cella n. ${i}`);
+           });
+    
+           rechargeBtnEl.addEventListener("click", function(){
+           window.location.reload();
+           });
+        };
+    };   
 });
-
-easyEl.addEventListener("click", function(){
-
-    easyEl.className = "selected";
-
-    if(easyEl.className = "selected") {
-
-        // Creo un evento al click del button
-        playBtnEl.addEventListener("click", function() {
-
-            playBtnEl.style.display = "none";
-
-            rechargeEl.style.display = "block";
         
-            // al click il display della griglia passa da none a flex
-            gridEl.style.display = "flex";
-            
-            // Creo un ciclo che genera le celle all'interno della griglia
-            for (let i = 1; i <= 49; i++) {
-                
-                // Creo variabile per creare nuovo elemento in pagina
-                let squareEl = document.createElement("div");
-                // gli asseglo una classe
-                squareEl.className = "square";
-                // faccio in modo che ci siano 10 celle per ogni riga
-                squareEl.style.width = "calc(100% / 7)";
-                // faccio comparire un numero crescente da 1 a 100 al suo interno usando i
-                squareEl.innerHTML = Math.floor(Math.random() * 49) + 1;;
-                // dico che l'elemento deve essere aggiunto all'interno della griglia
-                gridEl.append(squareEl);
-        
-        
-                // creo un evento al click della cella
-                squareEl.addEventListener("click", function(){
-        
-                    // al click della cella deve essere alternativamente aggiunta e tolta la classe active
-                    squareEl.classList.toggle("active");
-                    
-                    // Mostro in console il numero della cella cliccata
-                    console.log(`Hai cliccato la cella n. ${i}`);
-                });
 
-                rechargeBtnEl.addEventListener("click", function(){
-                    window.location.reload();
-                });
-        
-            };
-        
-        });
-  
-    }
-
-});
-
-
+    
